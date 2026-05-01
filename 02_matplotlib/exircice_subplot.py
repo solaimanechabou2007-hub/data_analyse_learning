@@ -12,11 +12,11 @@ df = pd.DataFrame(data)
 #visualizing the most popular product
 print(df.loc[df["sales"].idxmax(), "product"])
 print(df)
-#pie chart for sales product
+#pie chart for product sales
 plt.subplot(1, 2, 1)
 plt.pie(df["sales"], labels=df["product"])
 plt.title("pie chart")
-#bar chart for 
+#bar chart for product prix
 plt.subplot(1, 2, 2)
 plt.bar(df["product"], df["prix"])
 plt.title("bar chart")
