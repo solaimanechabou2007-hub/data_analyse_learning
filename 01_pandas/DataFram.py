@@ -1,24 +1,20 @@
-# Employees DataFrame Basics
-# Creating and filtering a DataFrame of employees
+#stor_sales_analysis.py 
 import pandas as pd 
 data = {
-    "name":("solaimane", "amine", "samia", "mohamed", "aya"),
-    "salary": (5000, 4000, 3000, 1200, 5700),
-    "city": ("mknes", "imlchil", "marakech", "marakech", "imilchil")
-    }
+    "product": ("phone", "tv", "computer"),
+    "quantity": (5000, 1000, 3000),
+    "prix": (1000, 3000, 2000)
+}
 df = pd.DataFrame(data)
-print(df)
-print(df.describe())
-#employees frome imilchil
-print(df[df["city"] == "imilchil"])
-#employees with salary >4000
-print(df[df["salary"] > 4000 ])
-
-
-
-
-
-
+#add total column 
+df["total"] = df["quantity"] * df["prix"]
+print(df["total"])
+#total sales 
+print(df["total"].sum())
+#the most expencive product
+print(df.loc[df["prix"].idxmax(), "product"])
+#total > 5000 
+print(df[df["total"] > 5000 ])
 
 
 
