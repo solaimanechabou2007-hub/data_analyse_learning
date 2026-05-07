@@ -15,7 +15,7 @@ data = {
 
 df = pd.DataFrame(data)
 #calcule the average salary for each sector
-average_salary_by_sector = df.groupby("sector")["salary"].mean()
+average_salary_by_sector = df.groupby["sector"]("salary").mean()
 #calcule the number of job for each type of contract
 df.groupby("contract")["job"].count() 
 #subplot 
